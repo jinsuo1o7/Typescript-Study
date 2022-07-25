@@ -1,47 +1,47 @@
+"use strict";
 // type
-var jinsu = 'jinsuo';
-var arr = ['jin', 'su'];
-var union_type = 13;
-var myTypeLet = ['sa', 'na'];
-var booleanType = true;
-var members = {
+let jinsu = 'jinsuo';
+let arr = ['jin', 'su'];
+let union_type = 13;
+let myTypeLet = ['sa', 'na'];
+let booleanType = true;
+let members = {
     key: 1,
     name: 'jinsu',
 };
-var memberA = 'jj';
-var singer = {
+let memberA = 'jj';
+let singer = {
     song_name: "aaa",
     singer_name: "bbb",
 };
-var pro = {
+let pro = {
     member: ['jin', 'su'],
     days: 30,
     started: true,
 };
 // 클래스
-var User = /** @class */ (function () {
-    function User(name) {
+class User {
+    constructor(name) {
         this.name = name;
     }
-    return User;
-}());
+}
 // tuple type
-var john = [444, true];
+let john = [444, true];
 // 파라미터 x는 숫자, 리턴 타입 숫자로 선언
 function fun(x) {
     return x * 2;
 }
 // 유니온타입 더 알아보기
-var unionMember = [1, 2, 3, 's'];
-var obj = { key: 123 };
+let unionMember = [1, 2, 3, 's'];
+let obj = { key: 123 };
 // any
-var na = 'shield break';
+let na = 'shield break';
 na = 123;
 na = {};
 // type쉴드가 해제되어 아무거나 들어옴
-var breaked = na;
+let breaked = na;
 // unknown (any와 사용법이 같음 조금 더 안전)
-var na2 = 123;
+let na2 = 123;
 na2 = 123;
 na2 = {};
 // any와 다르게 쉴드가 유지됨 // let breaked2:string = na2;
@@ -49,23 +49,23 @@ na2 = {};
 // union type
 // string과 number는 + 연산이 됨
 // string|number는 독자적인 타입으로 +연산이 없음
-var age;
+let age;
 // age+1;
 // unknown타입에 숫자를 할당해도 타입이 unknown이기 때문에 연산이 안됨
-var age2 = 1;
+let age2 = 1;
 // age2-1;
-var user = 'kim';
-var myAge = undefined;
-var married = true;
-var myArr = [user, myAge, married];
-var school = {
+let user = 'kim';
+let myAge = undefined;
+let married = true;
+let myArr = [user, myAge, married];
+let school = {
     score: [100, 99, 77],
     teacher: 'Phil',
     friend: 'jinsuo'
 };
 school.score[4] = false;
 school.friend = ['Lee', school.teacher];
-var myNum = 4;
+let myNum = 4;
 function simpleFunc(num) {
     return num * 2;
 }
@@ -88,7 +88,7 @@ function simpleFunc4(x) {
     if (typeof x === 'number') {
         return x + 3;
     }
-    var array = [];
+    let array = [];
     if (typeof x === 'number') {
         array[0] = x;
     }
@@ -98,25 +98,25 @@ function simpleFunc4(x) {
     // if 로 narrowing 하는게 좋음 (as는 버그 캐치를 안함)
     array[1] = x;
 }
-var animal = 'dog';
-var animal2 = {
+let animal = 'dog';
+let animal2 = {
     name: 'cat',
     age: 4,
 };
 // const obj
-var region = {
+const region = {
     location: 'seoul'
 };
 // const는 상수로써 변하지 않지만 const obj value는 변경 가능 
 region.location = 'busan';
-var girl = {
+const girl = {
     name: 'emma',
 };
-var newType = {
+let newType = {
     x: 3,
     y: 4
 };
-var person = {
+let person = {
     name: 'jinsu',
     phone: 123,
     email: 'cil@gmail.com'
@@ -124,8 +124,8 @@ var person = {
 // literal type
 // 리터럴한 값만 변수에 할당할 수 있음
 // 변수를 엄격하게 다룸
-var literalname = 'jinsu';
-var myInfo;
+let literalname = 'jinsu';
+let myInfo;
 myInfo = 24;
 // parameter를 엄격하게 관리하기 용이
 function literalFun(a) {
@@ -137,7 +137,7 @@ function literalFun2(a) {
 function literalFun3(a) {
     return ['가위'];
 }
-var simpleObj = {
+let simpleObj = {
     name: 'kim'
 };
 function myFunc(a) { }
@@ -147,20 +147,20 @@ function myFunc(a) { }
 // simpleObj.name은 string type이고 'kim'이 아니기때문에 parameter로 못들어 감
 // solution !
 // as const
-var simpleObj2 = {
+let simpleObj2 = {
     name: 'kim'
 };
 myFunc(simpleObj2.name);
-var myFunction = function (name) {
+let myFunction = function (name) {
     return 4;
 };
-var userInfo = {
+let userInfo = {
     name: 'jhin',
-    plusOne: function (a) {
+    plusOne(a) {
         return a + 4;
     },
-    changeName: function () { }
+    changeName: () => { }
 };
-var myObject = {
+let myObject = {
     animal: 'dog',
 };
